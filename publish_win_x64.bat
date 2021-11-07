@@ -1,0 +1,1 @@
+dotnet.exe publish /p:PublishSingleFile=true /p:PublishTrimmed=true /p:IncludeNativeLibrariesForSelfExtract=true  -c Release -r win-x64
