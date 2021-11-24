@@ -11,10 +11,10 @@ namespace MegaDownload.Code
         {
             Console.WriteLine($"Loading client...");
             var client = new MegaApiClient();
-            client.LoginAnonymous();
+            await client.LoginAnonymousAsync();
 
             var link = new Uri(url);
-            var node = client.GetNodeFromLink(link);
+            var node = await client.GetNodeFromLinkAsync(link);
 
             if (string.IsNullOrEmpty(file))
                 file = node.Name;
@@ -48,7 +48,7 @@ namespace MegaDownload.Code
                 }
             }));
 
-            client.Logout();
+            await client.LogoutAsync();
 
             Utils.ConsoleClearLine();
             Console.WriteLine("Done");
