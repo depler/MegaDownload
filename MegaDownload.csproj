@@ -6,12 +6,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin_win_x64\**" />
+    <EmbeddedResource Remove="bin_win_x64\**" />
+    <None Remove="bin_win_x64\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="MegaApiClient">
       <HintPath>Lib\MegaApiClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MegaDownload.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

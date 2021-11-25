@@ -9,9 +9,25 @@ namespace MegaDownload.Code
     {
         static async Task Download(string url, string file)
         {
-            Console.WriteLine($"Loading client...");
+            Console.WriteLine("Loading client...");
             var client = new MegaApiClient();
-            await client.LoginAnonymousAsync();
+            var config = new Config("MegaDownload.json");
+
+            if (string.IsNullOrEmpty(config.Email) || string.IsNullOrEmpty(config.Password))
+            {
+                Console.WriteLine("Using anonymous login...");
+                await client.LoginAnonymousAsync();
+            }
+            else if (string.IsNullOrEmpty(config.MfaKey))
+            {
+                Console.WriteLine("Using email and password...");
+                await client.LoginAsync(config.Email, config.Password);
+            }
+            else
+            {
+                Console.WriteLine("Using email, password and mfakey...");
+                await client.LoginAsync(config.Email, config.Password, config.MfaKey);
+            }
 
             var link = new Uri(url);
             var node = await client.GetNodeFromLinkAsync(link);
