@@ -1,6 +1,7 @@
 # MegaDownload
 Standalone console downloader for MEGA (https://mega.io/) file storage. Features:
 
+- Authorization support
 - Cross-platform .NET 6.0 binary
 - As simple as it could be
 - Ability to build self-contained executable for Windows and other platforms
