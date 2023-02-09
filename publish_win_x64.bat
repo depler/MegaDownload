@@ -1,1 +1,1 @@
-dotnet.exe publish --sc -c Release -r win-x64 -o bin_win_x64 -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true -p:PublishTrimmed=true -p:TrimMode=Link
+dotnet.exe publish --configuration "Release" --runtime "win-x64" --output "bin_win_x64" --self-contained -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true -p:PublishTrimmed=true -p:DebugType=None
