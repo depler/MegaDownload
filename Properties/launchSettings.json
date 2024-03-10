@@ -2,7 +2,7 @@
   "profiles": {
     "MegaDownload": {
       "commandName": "Project",
-      "commandLineArgs": "https://mega.nz/file/plEiyLRY#znQSUHZuo_0OMCHY5WrzNrXuDlcSiTChXQOLAOGKrpI c:\\Data\\Downloads\\test.dat"
+      "commandLineArgs": "https://mega.nz/file/plEiyLRY#znQSUHZuo_0OMCHY5WrzNrXuDlcSiTChXQOLAOGKrpI d:\\Downloads\\test.dat"
     }
   }
 }
