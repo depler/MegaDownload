@@ -1,4 +1,4 @@
-﻿using CG.Web.MegaApiClient;
+using CG.Web.MegaApiClient;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -7,7 +7,7 @@ namespace MegaDownload.Code;
 
 class Program
 {
-    static async Task Download(string url, string file)
+    static async Task Download(string url, string? file)
     {
         Console.WriteLine("Loading client...");
         var client = new MegaApiClient();
